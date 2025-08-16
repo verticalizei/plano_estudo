@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Plano de Estudo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Estilos Gerais - Tema Escuro (Padrão) */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px; /* Será ajustado pelo JS para o header fixo */
+      background-color: #1a1a2e; /* Fundo escuro */
+      color: #e0e0e0; /* Texto claro */
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Tema Claro */
+    body.light-theme {
+      background-color: #f0f2f5; /* Fundo claro */
+      color: #333; /* Texto escuro */
+    }
+
+    h1, h2 {
+      color: #e94560; /* Título em destaque */
+      margin-top: 30px;
+      border-bottom: 2px solid #0f3460;
+      padding-bottom: 10px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.light-theme h1, body.light-theme h2 {
+      color: #d63447; /* Título em destaque claro */
+      border-color: #ccc;
+    }
+
+    /* Estilos de Tabela */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background-color: #0f3460; /* Fundo da tabela */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      overflow: hidden; /* Para bordas arredondadas */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.light-theme table {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      border: 1px solid #1a1a2e; /* Bordas da célula */
+      padding: 12px;
+      text-align: center;
+      color: #e0e0e0;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.light-theme th, body.light-theme td {
+      border-color: #e0e0e0;
+      color: #333;
+    }
+
+    th {
+      background-color: #0a1931; /* Cabeçalho da tabela */
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background-color 0.3s ease;
+    }
+
+    body.light-theme th {
+      background-color: #e9ecef;
+      color: #555;
+    }
+
+    tr:nth-child(even) {
+      background-color: #16213e; /* Linhas pares */
+      transition: background-color 0.3s ease;
+    }
+
+    body.light-theme tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    /* Estilos de Input e Select */
+    input[type="number"],
+    input[type="text"],
+    select {
+      width: 80px; /* Ajustado para melhor visualização */
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #4a4a6a;
+      border-radius: 4px;
+      background-color: #2e2e4a; /* Fundo do input/select */
+      color: #e0e0e0; /* Texto do input/select */
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      -webkit-appearance: none; /* Remove estilo padrão do select no WebKit */
+      -moz-appearance: none; /* Remove estilo padrão do select no Mozilla */
+      appearance: none; /* Remove estilo padrão do select */
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e0e0e0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.4H18.6c-5%200-9.3%201.8-13.2%206.4-3.9%204.5-6%2010-6%2016.3%200%206.2%202.1%2011.7%206%2016.3l118.4%20118.4c3.9%203.9%209.4%206%2016.3%206s12.4-2.1%2016.3-6L287%20102c3.9-4.5%206-10%206-16.3s-2.1-11.7-6-16.3z%22%2F%3E%3C%2Fsvg%3E'); /* Seta customizada para select */
+      background-repeat: no-repeat;
+      background-position: right 8px top 50%;
+      background-size: 12px auto;
+      padding-right: 25px; /* Espaço para a seta */
+    }
+
+    body.light-theme input[type="number"],
+    body.light-theme input[type="text"],
+    body.light-theme select {
+      border-color: #ced4da;
+      background-color: #fff;
+      color: #333;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.4H18.6c-5%200-9.3%201.8-13.2%206.4-3.9%204.5-6%2010-6%2016.3%200%206.2%202.1%2011.7%206%2016.3l118.4%20118.4c3.9%203.9%209.4%206%2016.3%206s12.4-2.1%2016.3-6L287%20102c3.9-4.5%206-10%206-16.3s-2.1-11.7-6-16.3z%22%2F%3E%3C%2Fsvg%3E'); /* Seta customizada para select - cor escura */
+    }
+
+    input[type="number"]:focus,
+    input[type="text"]:focus,
+    select:focus {
+      border-color: #e94560;
+      box-shadow: 0 0 0 2px rgba(233, 69, 96, 0.3);
+      outline: none;
+    }
+
+    /* Estilos de Botão */
+    button {
+      background-color: #e94560; /* Cor do botão */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      white-space: nowrap; /* Evita quebra de linha em botões pequenos */
+    }
+
+    button:hover {
+      background-color: #c23a50;
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button.remove-btn {
+      background-color: #ef5350; /* Vermelho para remover */
+    }
+    button.remove-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    button.start-btn {
+      background-color: #66bb6a; /* Verde para iniciar */
+      padding: 8px 12px; /* Ajuste para botões de cronômetro */
+      font-size: 12px;
+    }
+    button.start-btn:hover {
+      background-color: #4caf50;
+    }
+
+    button.pause-btn {
+      background-color: #ffb300; /* Amarelo para pausar */
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+    button.pause-btn:hover {
+      background-color: #ffa000;
+    }
+
+    button.resume-btn {
+      background-color: #2196f3; /* Azul para continuar */
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+    button.resume-btn:hover {
+      background-color: #1976d2;
+    }
+
+    button.finish-btn {
+      background-color: #e94560; /* Vermelho/Destaque para concluir */
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+    button.finish-btn:hover {
+      background-color: #c23a50;
+    }
+
+    button.reset-btn { /* Novo estilo para o botão Zerar */
+      background-color: #6c757d; /* Cinza */
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+    button.reset-btn:hover {
+      background-color: #5a6268;
+    }
+
+    /* Contêiner de Gráficos */
+    .container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    /* Tornar os chart-containers flexíveis em desktop, com limites mínimos e máximos.
+       Isso evita que o canvas estique verticalmente e que o layout quebre. */
+    .chart-container {
+      flex: 1 1 45%;   /* cada gráfico ocupa aproximadamente 45% no desktop */
+      max-width: 500px; /* Limita a largura para melhor visualização */
+      min-width: 300px; /* Garante que não fique muito estreito */
+      background-color: #0f3460;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Garante que o canvas respeite a largura do container e não estique a página.
+       O max-height limita a altura máxima dos gráficos em desktop. */
+    .chart-container canvas {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 420px;
+      display: block;
+    }
+
+    body.light-theme .chart-container {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart-container h2 {
+      color: #e0e0e0;
+      border-bottom: 1px solid #1a1a2e;
+      margin-top: 0;
+      padding-bottom: 10px;
+      text-align: center;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.light-theme .chart-container h2 {
+      color: #333;
+      border-color: #e0e0e0;
+    }
+    /* Estilos para o gerenciamento de matérias */
+    .materia-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+      flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+    }
+
+    .materia-actions input[type="text"] {
+      flex-grow: 1;
+      width: auto; /* Permite que o input cresça */
+    }
+
+    .materia-actions button {
+      margin-top: 0;
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+
+    /* Feedback message */
+    .feedback-message {
+        margin-top: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .feedback-message.success {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .feedback-message.error {
+        background-color: #f44336;
+        color: white;
+    }
+
+    /* Cronograma Semanal - Layout por dia */
+    .cronograma-dia {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 5px;
+      background-color: #16213e;
+      border-radius: 5px;
+      min-width: 150px; /* Garante largura mínima para o bloco do dia */
+      transition: background-color 0.3s ease;
+    }
+
+    body.light-theme .cronograma-dia {
+      background-color: #f0f2f5;
+    }
+
+    .cronograma-slot {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cronograma-slot select {
+      flex-grow: 1;
+      width: auto;
+    }
+
+    .cronograma-slot input[type="number"] {
+      width: 60px;
+    }
+
+    .no-slots-message {
+        color: #999;
+        font-style: italic;
+        padding: 10px;
+        text-align: center;
+    }
+
+    body.light-theme .no-slots-message {
+        color: #666;
+    }
+
+    /* Novo estilo para o botão "Adicionar Slot" (ícone +) */
+    .add-slot-btn {
+      background-color: #66bb6a; /* Verde para adicionar */
+      color: white;
+      border-radius: 50%; /* Botão redondo */
+      width: 30px; /* Largura e altura iguais para ser redondo */
+      height: 30px;
+      padding: 0; /* Remove padding padrão */
+      font-size: 20px; /* Tamanho do + */
+      line-height: 1; /* Alinha o + verticalmente */
+      display: flex; /* Para centralizar o + */
+      justify-content: center;
+      align-items: center;
+      margin: 5px auto 0; /* Centraliza horizontalmente e adiciona margem superior */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .add-slot-btn:hover {
+      background-color: #4caf50;
+      transform: translateY(-1px) scale(1.05); /* Pequeno efeito de zoom */
+    }
+    .add-slot-btn:active {
+      transform: translateY(0) scale(1);
+    }
+
+    /* Estilo para o display do cronômetro */
+    .cronometro-display {
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 1.1em;
+      color: #66bb6a; /* Cor verde para o tempo */
+      min-width: 80px; /* Garante largura mínima para o display */
+      display: inline-block;
+    }
+
+    .cronometro-display.active {
+        color: #e94560; /* Cor de destaque quando ativo */
+        font-weight: bold;
+    }
+
+    .cronometro-display.paused {
+        color: #ffb300; /* Cor de destaque quando pausado */
+        font-weight: bold;
+    }
+
+    /* Estilo para o contêiner de botões do cronômetro */
+    .cronometro-actions {
+      display: flex;
+      flex-wrap: wrap; /* Permite que os botões quebrem linha */
+      gap: 5px; /* Espaçamento entre os botões */
+      justify-content: center; /* Centraliza os botões */
+    }
+
+    /* Estilos para os botões de incremento/decremento */
+    .input-with-buttons {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Aumentar o gap para melhor espaçamento */
+    }
+    .input-with-buttons input[type="number"] {
+        width: 60px; /* Ligeiramente maior para melhor visualização */
+        flex-grow: 0;
+    }
+    .input-with-buttons button {
+        width: 35px; /* Aumentar largura */
+        height: 35px; /* Aumentar altura */
+        padding: 0;
+        font-size: 20px; /* Aumentar tamanho da fonte do +/- */
+        line-height: 1;
+        margin: 0;
+        border-radius: 5px; /* Ligeiramente mais arredondado */
+        background-color: #0f3460;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adicionar sombra para profundidade */
+    }
+    body.light-theme .input-with-buttons button {
+        background-color: #e0e0e0;
+        color: #333;
+    }
+    .input-with-buttons button:hover {
+        background-color: #16213e;
+        transform: translateY(-1px);
+    }
+    body.light-theme .input-with-buttons button:hover {
+        background-color: #d0d0d0;
+    }
+
+    /* Cores para o percentual de acertos */
+    .percentual-acertos.high { color: #66bb6a; } /* Verde */
+    .percentual-acertos.medium { color: #ffb300; } /* Amarelo */
+    .percentual-acertos.low { color: #ef5350; } /* Vermelho */
+
+    /* Estilos do Modal (Popup) */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Base para modais */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background-color: #0f3460;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      max-width: 500px;
+      transform: translateY(-20px);
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative; /* Para o botão de fechar */
+      max-height: 90vh; /* Limita a altura do modal */
+      overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+    }
+
+    body.light-theme .modal-content {
+      background-color: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: translateY(0);
+    }
+
+    .modal-content h3 {
+      color: #e94560;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #1a1a2e;
+      padding-bottom: 10px;
+      text-align: center;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.light-theme .modal-content h3 {
+      color: #d63447;
+      border-color: #e0e0e0;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 5px; /* Ajustado para mais próximo do canto */
+      right: 5px; /* Ajustado para mais próximo do canto */
+      background: none;
+      border: none;
+      color: #e0e0e0;
+      font-size: 30px; /* Aumentado para facilitar o toque */
+      cursor: pointer;
+      padding: 10px; /* Aumentado a área de clique/toque */
+      margin: 0;
+      transition: color 0.2s ease;
+      line-height: 1; /* Garante que o X fique centralizado */
+    }
+
+    body.light-theme .modal-close-btn {
+      color: #666;
+    }
+
+    .modal-close-btn:hover {
+      color: #e94560;
+    }
+    body.light-theme .modal-close-btn:hover {
+      color: #d63447;
+    }
+
+    .modal-materia-list {
+        max-height: 300px; /* Limita a altura para scroll */
+        overflow-y: auto;
+        padding-right: 10px; /* Espaço para a barra de rolagem */
+    }
+
+    .modal-materia-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #1a1a2e;
+        transition: border-color 0.3s ease;
+    }
+
+    body.light-theme .modal-materia-item {
+        border-color: #e0e0e0;
+    }
+
+    .modal-materia-item:last-child {
+        border-bottom: none;
+    }
+
+    .modal-materia-item span {
+        flex-grow: 1;
+        text-align: left;
+        padding-left: 5px;
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+    }
+
+    body.light-theme .modal-materia-item span {
+        color: #333;
+    }
+
+    .modal-materia-item button {
+        margin-top: 0;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* Novos estilos para a navegação em abas (escondida por padrão) */
+    .tab-navigation {
+      display: none; /* Esconder por padrão, mostrar apenas em mobile */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #0a1931; /* Cor do cabeçalho da tabela */
+      border-top: 1px solid #0f3460;
+      justify-content: space-around; /* Usado quando display: flex */
+      padding: 10px 0;
+      z-index: 999;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.light-theme .tab-navigation {
+      background-color: #e9ecef;
+      border-color: #ccc;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-navigation button {
+      background: none;
+      border: none;
+      color: #e0e0e0;
+      font-size: 12px;
+      padding: 8px 5px;
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      margin-top: 0; /* Sobrescrever margin-top padrão do botão */
+      box-shadow: none; /* Remover sombra padrão do botão */
+    }
+
+    body.light-theme .tab-navigation button {
+      color: #555;
+    }
+
+    .tab-navigation button:hover,
+    .tab-navigation button.active {
+      color: #e94560;
+    }
+
+    body.light-theme .tab-navigation button:hover,
+    body.light-theme .tab-navigation button.active {
+      color: #d63447;
+    }
+
+    .tab-navigation button.active {
+      font-weight: bold;
+      font-size: 13px; /* Ligeiramente maior para destaque */
+    }
+
+    .tab-navigation button i { /* Ícones para as abas */
+      font-size: 20px; /* Ícones maiores */
+    }
+
+    /* Conteúdo das abas (visível por padrão para desktop) */
+    .tab-content {
+      display: none; /* Por padrão, escondido. JS controla a visibilidade. */
+    }
+
+    .tab-content.active {
+        display: block; /* Apenas a aba ativa é mostrada */
+    }
+
+    /* Estilos para "cartões" de seção (aplicados sempre, mas mais relevantes em mobile) */
+    .section-card {
+      background-color: #0f3460;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px; /* Espaçamento entre os cartões */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.light-theme .section-card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilos para a nova seção de Salvar/Carregar */
+    .data-management-section {
+      margin-top: 40px; /* Espaçamento entre Gerenciar Matérias e Gerenciar Dados dentro do modal */
+      padding: 20px;
+      background-color: #0f3460;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.light-theme .data-management-section {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .data-management-section h2 {
+      color: #e94560;
+      border-bottom: 1px solid #1a1a2e;
+      margin-top: 0;
+      padding-bottom: 10px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.light-theme .data-management-section h2 {
+      color: #d63447;
+      border-color: #e0e0e0;
+    }
+
+    .data-management-section .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .data-management-section button {
+      margin-top: 0; /* Sobrescrever margin-top padrão do botão */
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .data-management-section input[type="file"] {
+      display: none; /* Esconder o input de arquivo padrão */
+    }
+
+    /* Estilo para o botão flutuante de configurações (visível apenas em desktop) */
+    /* REMOVIDO - SUBSTITUIDO PELA NAV SUPERIOR */
+    .fab-settings {
+      display: none;
+    }
+
+    /* Estilos para o modal de configurações */
+    #settingsModal .modal-content {
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    #settingsModal .modal-content .section-card {
+      background-color: #16213e;
+      margin-bottom: 15px;
+      padding: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    body.light-theme #settingsModal .modal-content .section-card {
+      background-color: #f0f2f5;
+    }
+
+    #settingsModal .modal-content .section-card:last-child {
+      margin-bottom: 0;
+    }
+
+    #settingsModal .modal-content .section-card h2 {
+      color: #e0e0e0;
+      border-bottom: 1px solid #0f3460;
+      padding-bottom: 8px;
+      font-size: 1.2em;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.light-theme #settingsModal .modal-content .section-card h2 {
+      color: #333;
+      border-color: #e0e0e0;
+    }
+
+    /* Novo estilo para o gerenciamento de dias do cronograma */
+    .cronograma-day-management {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cronograma-day-management .day-input-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .cronograma-day-management .day-input-group input[type="text"] {
+      flex-grow: 1;
+      width: auto;
+    }
+
+    .cronograma-day-list {
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 10px;
+      margin-top: 10px;
+    }
+
+    .cronograma-day-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #1a1a2e;
+      color: #e0e0e0;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.light-theme .cronograma-day-item {
+      border-color: #e0e0e0;
+      color: #333;
+    }
+
+    .cronograma-day-item:last-child {
+      border-bottom: none;
+    }
+
+    .cronograma-day-item span {
+        flex-grow: 1;
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .cronograma-day-item button {
+      margin-top: 0;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    /* Estilo para o botão de tema dentro do modal */
+    .theme-toggle-button {
+        background-color: #2196f3; /* Azul */
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+        flex-grow: 1; /* Permite que o botão cresça */
+    }
+
+    .theme-toggle-button:hover {
+        background-color: #1976d2;
+    }
+
+    .theme-toggle-button i {
+        font-size: 16px;
+    }
+
+    /* Ajuste para o span "Alternar Tema" */
+    .materia-actions span {
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+    }
+    body.light-theme .materia-actions span {
+        color: #333;
+    }
+
+    /* Estilos para os novos cartões de matéria (mobile) */
+    .materia-card-list {
+        display: none; /* Esconder por padrão em desktop */
+        flex-direction: column;
+        gap: 15px; /* Espaçamento entre os cartões */
+    }
+
+    .materia-card {
+        background-color: #16213e; /* Cor de fundo similar às linhas pares da tabela */
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.light-theme .materia-card {
+        background-color: #f8f9fa; /* Cor de fundo similar às linhas pares da tabela clara */
+    }
+
+    .materia-card .card-header {
+        font-weight: bold;
+        color: #e94560; /* Cor de destaque */
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #0f3460;
+        font-size: 1.1em;
+        transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.light-theme .materia-card .card-header {
+        color: #d63447;
+        border-color: #ccc;
+    }
+
+    .materia-card .card-body p {
+        margin: 5px 0;
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+    }
+
+    body.light-theme .materia-card .card-body p {
+        color: #333;
+    }
+
+    .materia-card .card-body span {
+        font-weight: normal; /* Resetar negrito para spans dentro de p */
+    }
+
+    .materia-card .cronometro-section,
+    .materia-card .stats-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .materia-card .cronometro-section .cronometro-display {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .materia-card .cronometro-actions {
+        flex-grow: 1;
+        justify-content: flex-end; /* Alinha botões à direita */
+    }
+
+    .materia-card .cronometro-actions button {
+        width: auto; /* Permite que os botões tenham largura automática */
+        flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
+        min-width: 80px; /* Largura mínima para botões */
+    }
+
+    .materia-card .stats-row span {
+        flex-basis: 60px; /* Largura fixa para o label "Acertos/Erros" */
+        text-align: left;
+    }
+
+    .materia-card .stats-row .input-with-buttons {
+        flex-grow: 1;
+        justify-content: flex-start;
+    }
+
+    .materia-card .percentual-acertos {
+        display: block; /* Ocupa a linha inteira */
+        text-align: right;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Header principal - FIXO NO TOPO */
+    .main-header {
+      background-color: #0a1931; /* Cor do cabeçalho da tabela */
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: fixed; /* Fixa o header */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999; /* Garante que fique acima do conteúdo, mas abaixo dos modais */
+    }
+
+    body.light-theme .main-header {
+      background-color: #e9ecef;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Navegação Desktop */
+    .desktop-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .desktop-nav .nav-btn {
+      background: none;
+      border: none;
+      color: #e0e0e0;
+      font-size: 16px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0; /* Sobrescrever margin-top padrão do botão */
+      box-shadow: none; /* Remover sombra padrão do botão */
+    }
+
+    body.light-theme .desktop-nav .nav-btn {
+      color: #555;
+    }
+
+    .desktop-nav .nav-btn:hover,
+    .desktop-nav .nav-btn.active {
+      color: #e94560;
+      background-color: #16213e; /* Fundo sutil ao passar o mouse/ativo */
+    }
+
+    body.light-theme .desktop-nav .nav-btn:hover,
+    body.light-theme .desktop-nav .nav-btn.active {
+      color: #d63447;
+      background-color: #f0f2f5;
+    }
+
+    .desktop-nav .nav-btn i {
+      font-size: 18px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px 10px 70px 10px; /* Ajustar padding inferior para a barra de navegação */
+      }
+      h1 {
+        text-align: center;
+      }
+      /* Correção para o container de gráficos em mobile */
+      .container {
+        flex-direction: column; /* Empilha os gráficos em mobile */
+        align-items: center;
+        gap: 20px; /* Reduz o gap em mobile */
+      }
+      .chart-container {
+        width: 95%; /* Ocupa quase toda a largura em mobile */
+        max-width: none; /* Remove o max-width para mobile */
+      }
+      /* Ajuste para tabelas em telas pequenas */
+      /* Envolve a tabela em um contêiner com overflow-x para rolagem horizontal */
+      .table-responsive-wrapper {
+        display: block;
+        overflow-x: auto; /* Mantém a rolagem horizontal para a tabela, se necessário */
+        -webkit-overflow-scrolling: touch; /* Suaviza a rolagem em iOS */
+        width: 100%; /* Garante que o wrapper ocupe a largura total */
+        margin: 15px 0; /* Mantém a margem da tabela */
+      }
+      table {
+        width: 100%; /* Tabela ocupa 100% do wrapper */
+        min-width: auto; /* Remove min-width fixo para a tabela */
+        margin: 0; /* Remove margem da tabela, agora controlada pelo wrapper */
+      }
+      th, td {
+        font-size: 12px;
+        padding: 6px;
+        white-space: normal; /* Permite quebra de linha dentro das células */
+        word-break: break-word; /* Força a quebra de palavras longas */
+      }
+      /* Ajustes específicos para células do cronograma */
+      #cronogramaTable th, #cronogramaTable td {
+        min-width: auto; /* Remove min-width fixo para células do cronograma */
+        width: 50%; /* Divide a largura entre "Dia" e "Slots de Estudo" */
+        vertical-align: top; /* Alinha o conteúdo ao topo */
+      }
+      .cronograma-dia {
+        min-width: auto; /* Remove min-width fixo para o bloco do dia */
+        width: 100%; /* Ocupa a largura total da célula */
+      }
+      /* Ajustes para os elementos do slot do cronograma em mobile */
+      .cronograma-slot {
+        flex-wrap: wrap; /* Permite que os elementos do slot quebrem linha */
+        justify-content: flex-start;
+        flex-direction: column; /* Empilha matéria, duração e botão de remover */
+        align-items: stretch;
+        padding: 5px; /* Adiciona um pouco de padding interno */
+        border: 1px solid #2e2e4a; /* Adiciona uma borda para separar visualmente os slots */
+        border-radius: 4px;
+        margin-bottom: 5px; /* Espaçamento entre slots */
+      }
+      .cronograma-slot:last-of-type {
+        margin-bottom: 0;
+      }
+      .cronograma-slot select {
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin-bottom: 5px; /* Adiciona espaço entre os elementos empilhados */
+        font-size: 1em; /* Manter um tamanho de fonte legível */
+        white-space: nowrap; /* Evita quebra de linha no texto do select */
+        text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
+        overflow: hidden; /* Esconde o texto que excede o limite */
+      }
+      .cronograma-slot input[type="number"] {
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin-bottom: 5px; /* Adiciona espaço entre os elementos empilhados */
+      }
+      .cronograma-slot button.remove-btn {
+        width: 100%; /* Botão de remover ocupa a largura total */
+        margin-top: 5px;
+      }
+
+      .cronometro-actions button { /* Ajusta botões de cronômetro em telas pequenas */
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin-top: 0; /* Remove margem superior extra */
+      }
+      .materia-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .materia-actions button {
+        width: 100%;
+      }
+      .materia-actions input[type="text"] {
+        width: 100%;
+      }
+      .modal-content {
+        padding: 20px;
+      }
+
+      /* Ativar navegação em abas e esconder seções não ativas em mobile */
+      .tab-navigation {
+        display: flex; /* Mostrar a navegação em abas em telas pequenas */
+      }
+
+      .tab-content {
+        display: none; /* Esconder todas as abas por padrão em mobile */
+        padding-bottom: 0; /* Resetar padding inferior para o conteúdo da aba */
+      }
+
+      .tab-content.active {
+        display: block; /* Mostrar apenas a aba ativa em mobile */
+      }
+
+      /* Esconder os títulos H2 quando as abas estiverem ativas para evitar duplicação */
+      .tab-content h2 {
+        display: none;
+      }
+
+      /* Ajustes para os botões de incremento/decremento em mobile */
+      .input-with-buttons {
+        width: 100%;
+        justify-content: center; /* Centraliza os botões e input */
+      }
+      .input-with-buttons input[type="number"] {
+        flex-grow: 1; /* Permite que o input cresça */
+        max-width: 80px; /* Limita a largura para não ficar muito grande */
+      }
+
+      /* Ajustes para a seção de gerenciamento de dados em mobile */
+      .data-management-section .button-group {
+        flex-direction: column; /* Empilha os botões */
+      }
+      .data-management-section button {
+        width: 100%; /* Ocupa a largura total */
+      }
+
+      /* Esconder o botão flutuante de configurações em mobile */
+      .fab-settings {
+        display: none;
+      }
+
+      /* Ajustes para o botão de tema em mobile */
+      .theme-toggle-button {
+        width: 100%; /* Ocupa a largura total em mobile */
+      }
+      .materia-actions span {
+        width: 100%; /* Ocupa a largura total em mobile */
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      /* Esconder tabelas e mostrar lista de cartões em mobile */
+      #horasTable, #questoesTable {
+          display: none;
+      }
+      .materia-card-list {
+          display: flex; /* Mostrar a lista de cartões em mobile */
+      }
+
+      /* Esconder a navegação superior em mobile */
+      .main-header {
+        display: none;
+      }
+    }
+
+    /* Ajustes para desktop (min-width: 769px) */
+    @media (min-width: 769px) {
+      body {
+        /* Adiciona padding superior para compensar o header fixo */
+        padding-top: 80px; /* Altura do header + margem */
+      }
+      .tab-navigation {
+        display: none; /* Esconder a navegação inferior em desktop */
+      }
+      .fab-settings {
+        display: none; /* Esconder o FAB em desktop, pois a navegação superior o substitui */
+      }
+      .desktop-nav {
+        display: flex; /* Mostrar a navegação superior em desktop */
+      }
+      /* Em desktop, as abas são controladas pelo JS para mostrar apenas a ativa */
+      /* .tab-content { display: block !important; } REMOVIDO - JS CONTROLA */
+      .tab-content h2 { /* Mostrar os títulos H2 em desktop */
+        display: block !important;
+      }
+      #horasTable, #questoesTable { /* Mostrar tabelas em desktop */
+          display: table;
+      }
+      .materia-card-list { /* Esconder cartões em desktop */
+          display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="desktop-nav">
+      <button id="desktopTabBtnCronograma" class="nav-btn" onclick="showTab('cronogramaTab', this)"><i class="fas fa-calendar-alt"></i> Cronograma</button>
+      <button id="desktopTabBtnHoras" class="nav-btn" onclick="showTab('horasTab', this)"><i class="fas fa-clock"></i> Horas</button>
+      <button id="desktopTabBtnQuestoes" class="nav-btn" onclick="showTab('questoesTab', this)"><i class="fas fa-question-circle"></i> Questões</button>
+      <button id="desktopTabBtnGraficos" class="nav-btn" onclick="showTab('graficosTab', this)"><i class="fas fa-chart-bar"></i> Gráficos</button>
+      <button id="desktopTabBtnSettings" class="nav-btn settings-nav-btn" onclick="openSettingsModal()"><i class="fas fa-cog"></i> Configurações</button>
+    </nav>
+  </header>
+
+  <h1>Plano de Estudo</h1>
+
+  <!-- Conteúdo principal das abas -->
+  <div id="cronogramaTab" class="tab-content">
+    <div class="section-card">
+      <h2>Cronograma Semanal</h2>
+      <!-- Wrapper para rolagem horizontal da tabela -->
+      <div class="table-responsive-wrapper">
+        <table id="cronogramaTable">
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Slots de Estudo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Conteúdo gerado por JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="horasTab" class="tab-content">
+    <div class="section-card">
+      <h2>Total de Horas por Conteúdo</h2>
+      <!-- Tabela para desktop -->
+      <div class="table-responsive-wrapper">
+        <table id="horasTable">
+          <thead>
+            <tr><th>Matéria</th><th>Total de Horas (min)</th><th>Cronômetro</th><th>Ações</th></tr>
+          </thead>
+          <tbody>
+            <!-- Conteúdo gerado por JS -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Lista de cartões para mobile -->
+      <div id="horasCardList" class="materia-card-list">
+        <!-- Conteúdo gerado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <div id="questoesTab" class="tab-content">
+    <div class="section-card">
+      <h2>Questões (Acertos x Erros)</h2>
+      <!-- Tabela para desktop -->
+      <div class="table-responsive-wrapper">
+        <table id="questoesTable">
+          <thead>
+            <tr><th>Matéria</th><th>Acertos</th><th>Erros</th><th>% Acertos</th></tr>
+          </thead>
+          <tbody>
+            <!-- Conteúdo gerado por JS -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Lista de cartões para mobile -->
+      <div id="questoesCardList" class="materia-card-list">
+        <!-- Conteúdo gerado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <div id="graficosTab" class="tab-content">
+    <div class="section-card">
+      <h2>Gráficos</h2>
+      <div class="container">
+        <div class="chart-container">
+          <h2>Horas por Matéria</h2>
+          <canvas id="chartHoras"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2>Acertos x Erros</h2>
+          <canvas id="chartQuestoes"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Configurações -->
+  <div id="settingsModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeSettingsModal()">&times;</button>
+      <h3>Configurações</h3>
+
+      <!-- Opção de Tema -->
+      <div class="section-card">
+        <h2>Tema</h2>
+        <div class="materia-actions">
+          <span>Alternar Tema:</span>
+          <button class="theme-toggle-button" onclick="toggleTheme()">
+            <i class="fas fa-sun"></i> / <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Gerenciamento de Matérias Base -->
+      <div class="section-card">
+        <h2>Gerenciar Matérias Base</h2>
+        <div class="materia-actions">
+          <input type="text" id="novaMateriaNome" placeholder="Nome da nova matéria">
+          <button onclick="adicionarMateriaBase()">Adicionar Matéria</button>
+        </div>
+        <div id="materiaFeedback" class="feedback-message"></div>
+        <div id="modalMateriasList" class="modal-materia-list">
+          <!-- Matérias base serão renderizadas aqui pelo JS no modal -->
+        </div>
+      </div>
+
+      <!-- Gerenciamento de Dias do Cronograma -->
+      <div class="section-card">
+        <h2>Gerenciar Dias do Cronograma</h2>
+        <div class="cronograma-day-management">
+          <div class="day-input-group">
+            <input type="text" id="novoDiaNome" placeholder="Ex: Segunda, Sábado">
+            <button onclick="adicionarDiaCronograma()">Adicionar Dia</button>
+          </div>
+          <div id="cronogramaDayFeedback" class="feedback-message"></div>
+          <div id="cronogramaDayList" class="cronograma-day-list">
+            <!-- Dias cadastrados serão renderizados aqui -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção para Salvar/Carregar Progresso -->
+      <div class="data-management-section section-card">
+        <h2>Gerenciar Dados</h2>
+        <div class="button-group">
+          <button onclick="salvarProgressoJSON()">
+            <i class="fas fa-download"></i> Salvar Progresso
+          </button>
+          <input type="file" id="uploadJsonInput" accept=".json" onchange="carregarProgressoJSON(event)">
+          <button onclick="document.getElementById('uploadJsonInput').click()">
+            <i class="fas fa-upload"></i> Carregar Progresso
+          </button>
+        </div>
+        <div id="dataFeedback" class="feedback-message"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Navegação em Abas (para mobile/tablet) -->
+  <div class="tab-navigation">
+    <button id="tabBtnCronograma" onclick="showTab('cronogramaTab', this)">
+      <i class="fas fa-calendar-alt"></i>
+      <span>Cronograma</span>
+    </button>
+    <button id="tabBtnHoras" onclick="showTab('horasTab', this)">
+      <i class="fas fa-clock"></i>
+      <span>Horas</span>
+    </button>
+    <button id="tabBtnQuestoes" onclick="showTab('questoesTab', this)">
+      <i class="fas fa-question-circle"></i>
+      <span>Questões</span>
+    </button>
+    <button id="tabBtnGraficos" onclick="showTab('graficosTab', this)">
+      <i class="fas fa-chart-bar"></i>
+      <span>Gráficos</span>
+    </button>
+    <button id="tabBtnSettings" onclick="openSettingsModal()">
+      <i class="fas fa-cog"></i>
+      <span>Config.</span>
+    </button>
+  </div>
+
+<script>
+  let chartHoras, chartQuestoes;
+
+  // Estrutura de dados principal
+  let appData = {
+    materiasBase: [
+      { nome: 'Português', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Penal Processual', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Direito Penal', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Direitos Humanos', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Legislação', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Raciocínio Lógico', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Informática', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Constitucional', totalHoras: 0, acertos: 0, erros: 0 },
+      { nome: 'Administrativo', totalHoras: 0, acertos: 0, erros: 0 }
+    ],
+    cronogramaSemanal: {
+      // Dias e slots serão gerenciados dinamicamente
+    },
+    diasCadastrados: [], // Começa vazio para ser totalmente dinâmico
+    theme: 'dark' // 'dark' ou 'light'
+  };
+
+  // Variáveis globais para o cronômetro ativo
+  let activeCronometer = {
+    interval: null,
+    materiaNome: null,
+    displayElement: null,
+    startTime: 0,
+    pausedTime: 0,
+    isPaused: false
+  };
+
+  /**
+   * Salva os dados da aplicação no localStorage.
+   */
+  function salvarDados() {
+    localStorage.setItem('planilhaEstudoData', JSON.stringify(appData));
+  }
+
+  /**
+   * Carrega os dados da aplicação do localStorage.
+   */
+  function carregarDados() {
+    const dadosSalvos = localStorage.getItem('planilhaEstudoData');
+    if (dadosSalvos) {
+      const parsedData = JSON.parse(dadosSalvos);
+
+      // Carrega matérias base, garantindo propriedades padrão
+      appData.materiasBase = parsedData.materiasBase || [];
+      appData.materiasBase.forEach(materia => {
+        materia.totalHoras = materia.totalHoras || 0;
+        materia.acertos = materia.acertos || 0;
+        materia.erros = materia.erros || 0;
+      });
+
+      // Carrega dias cadastrados e cronograma semanal
+      appData.diasCadastrados = parsedData.diasCadastrados || [];
+      appData.cronogramaSemanal = parsedData.cronogramaSemanal || {};
+
+      // Garante que os slots tenham matéria e duração
+      Object.keys(appData.cronogramaSemanal).forEach(dia => {
+        appData.cronogramaSemanal[dia] = appData.cronogramaSemanal[dia].map(slot => ({
+          materia: slot.materia || '',
+          duracao: slot.duracao || 0
+        }));
+      });
+
+      // Carrega o tema
+      appData.theme = parsedData.theme || 'dark';
+
+    } else {
+      // Se não houver dados salvos, inicializa diasCadastrados como vazio
+      appData.diasCadastrados = [];
+      appData.cronogramaSemanal = {}; // Garante que o cronograma também esteja vazio
+      salvarDados(); // Salva essa inicialização para que não retorne ao recarregar
+    }
+  }
+
+  /**
+   * Exibe uma mensagem de feedback temporária.
+   * @param {string} message - A mensagem a ser exibida.
+   * @param {string} type - O tipo de mensagem ('success' ou 'error').
+   * @param {string} targetDivId - O ID da div de feedback (ex: 'materiaFeedback', 'dataFeedback', 'cronogramaDayFeedback').
+   */
+  function showFeedback(message, type, targetDivId = 'materiaFeedback') {
+    const feedbackDiv = document.getElementById(targetDivId);
+    if (!feedbackDiv) return;
+
+    feedbackDiv.textContent = message;
+    feedbackDiv.className = `feedback-message ${type}`;
+    feedbackDiv.style.opacity = '1';
+
+    setTimeout(() => {
+      feedbackDiv.style.opacity = '0';
+      setTimeout(() => {
+        feedbackDiv.textContent = '';
+        feedbackDiv.className = 'feedback-message';
+      }, 500);
+    }, 3000);
+  }
+
+  /**
+   * Abre o modal de configurações.
+   */
+  function openSettingsModal() {
+    document.getElementById('settingsModal').classList.add('active');
+    renderizarCronogramaDayList(); // Renderiza a lista de dias ao abrir o modal
+    renderizarMateriasModalList(); // Renderiza a lista de matérias ao abrir o modal
+  }
+
+  /**
+   * Fecha o modal de configurações.
+   */
+  function closeSettingsModal() {
+    document.getElementById('settingsModal').classList.remove('active');
+  }
+
+  /**
+   * Renderiza a lista de matérias base dentro do modal de configurações.
+   */
+  function renderizarMateriasModalList() {
+    const modalMateriasListDiv = document.getElementById('modalMateriasList');
+    modalMateriasListDiv.innerHTML = '';
+
+    if (appData.materiasBase.length === 0) {
+        modalMateriasListDiv.innerHTML = '<p class="no-slots-message">Nenhuma matéria base adicionada.</p>';
+        return;
+    }
+
+    appData.materiasBase.forEach(materia => {
+      const materiaItem = document.createElement('div');
+      materiaItem.className = 'modal-materia-item';
+      materiaItem.innerHTML = `
+        <span>${materia.nome}</span>
+        <button class="remove-btn" onclick="removerMateriaBase('${materia.nome}')">Remover</button>
+      `;
+      modalMateriasListDiv.appendChild(materiaItem);
+    });
+  }
+
+  /**
+   * Renderiza a tabela do cronograma semanal.
+   */
+  function renderizarCronograma() {
+    const tbody = document.querySelector('#cronogramaTable tbody');
+    tbody.innerHTML = '';
+
+    if (appData.diasCadastrados.length === 0) {
+      const row = tbody.insertRow();
+      const cell = row.insertCell();
+      cell.colSpan = 2;
+      cell.innerHTML = '<p class="no-slots-message">Nenhum dia cadastrado no cronograma. Adicione dias nas configurações.</p>';
+      return;
+    }
+
+    appData.diasCadastrados.forEach(dia => {
+      const row = tbody.insertRow();
+      row.insertCell().textContent = dia;
+
+      const slotsCell = row.insertCell();
+      const diaContainer = document.createElement('div');
+      diaContainer.className = 'cronograma-dia';
+      diaContainer.id = `cronograma-dia-${dia.replace(/\s/g, '-')}`; // Usar ID seguro para o DOM
+
+      const slotsForDay = appData.cronogramaSemanal[dia] || []; // Garante que o array exista
+
+      if (slotsForDay.length === 0) {
+          const noSlotsMessage = document.createElement('p');
+          noSlotsMessage.className = 'no-slots-message';
+          noSlotsMessage.textContent = 'Nenhum slot adicionado para este dia.';
+          diaContainer.appendChild(noSlotsMessage);
+      } else {
+          slotsForDay.forEach((slot, slotIndex) => {
+            diaContainer.appendChild(criarSlotCronograma(dia, slotIndex, slot.materia, slot.duracao));
+          });
+      }
+
+      const addSlotBtn = document.createElement('button');
+      addSlotBtn.textContent = '+';
+      addSlotBtn.className = 'add-slot-btn';
+      addSlotBtn.onclick = () => adicionarSlotCronograma(dia);
+      diaContainer.appendChild(addSlotBtn);
+
+      slotsCell.appendChild(diaContainer);
+    });
+  }
+
+  /**
+   * Cria e retorna um elemento de slot de cronograma.
+   * @param {string} dia - O dia da semana.
+   * @param {number} slotIndex - O índice do slot no array do dia.
+   * @param {string} [materiaSelecionada=''] - A matéria pré-selecionada.
+   * @param {number} [duracao=0] - A duração pré-definida.
+   * @returns {HTMLElement} O elemento div do slot.
+   */
+  function criarSlotCronograma(dia, slotIndex, materiaSelecionada = '', duracao = 0) {
+    const slotDiv = document.createElement('div');
+    slotDiv.className = 'cronograma-slot';
+    slotDiv.dataset.dia = dia;
+    slotDiv.dataset.slotIndex = slotIndex;
+
+    const selectMateria = document.createElement('select');
+    if (appData.materiasBase.length === 0) {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'Nenhuma matéria';
+        selectMateria.appendChild(option);
+        selectMateria.disabled = true;
+    } else {
+        appData.materiasBase.forEach(materia => {
+            const option = document.createElement('option');
+            option.value = materia.nome;
+            option.textContent = materia.nome;
+            selectMateria.appendChild(option);
+        });
+        selectMateria.value = materiaSelecionada || appData.materiasBase[0].nome;
+    }
+
+    selectMateria.addEventListener('change', (e) => {
+      appData.cronogramaSemanal[dia][slotIndex].materia = e.target.value;
+      salvarDados();
+      renderizarTabelas(); // Re-renderiza para atualizar as tabelas de horas/questões
+    });
+    slotDiv.appendChild(selectMateria);
+
+    const inputDuracao = document.createElement('input');
+    inputDuracao.type = 'number';
+    inputDuracao.min = '0';
+    inputDuracao.placeholder = 'min';
+    inputDuracao.value = duracao;
+    inputDuracao.addEventListener('change', (e) => {
+      appData.cronogramaSemanal[dia][slotIndex].duracao = Number(e.target.value);
+      salvarDados();
+    });
+    slotDiv.appendChild(inputDuracao);
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'X';
+    removeBtn.className = 'remove-btn';
+    removeBtn.style.padding = '5px 8px';
+    removeBtn.style.fontSize = '10px';
+    removeBtn.style.marginTop = '0';
+    removeBtn.onclick = () => removerSlotCronograma(dia, slotIndex);
+    slotDiv.appendChild(removeBtn);
+
+    return slotDiv;
+  }
+
+  /**
+   * Adiciona um novo slot de estudo para um dia específico.
+   * @param {string} dia - O dia da semana.
+   */
+  function adicionarSlotCronograma(dia) {
+    if (appData.materiasBase.length === 0) {
+        showFeedback('Por favor, adicione pelo menos uma matéria base antes de criar um slot de estudo.', 'error', 'materiaFeedback');
+        return;
+    }
+    // Garante que o array para o dia exista
+    if (!appData.cronogramaSemanal[dia]) {
+      appData.cronogramaSemanal[dia] = [];
+    }
+    const newSlot = { materia: appData.materiasBase[0].nome, duracao: 60 };
+    appData.cronogramaSemanal[dia].push(newSlot);
+    salvarDados();
+    renderizarCronograma();
+    renderizarHorasTable(); // Atualiza ambas as visualizações
+    renderizarQuestoesTable(); // Atualiza ambas as visualizações
+    atualizarGraficos();
+  }
+
+  /**
+   * Remove um slot de estudo de um dia específico.
+   * @param {string} dia - O dia da semana.
+   * @param {number} slotIndex - O índice do slot a ser removido.
+   */
+  function removerSlotCronograma(dia, slotIndex) {
+    appData.cronogramaSemanal[dia].splice(slotIndex, 1);
+    salvarDados();
+    renderizarCronograma();
+    renderizarHorasTable(); // Atualiza ambas as visualizações
+    renderizarQuestoesTable(); // Atualiza ambas as visualizações
+    atualizarGraficos();
+  }
+
+  /**
+   * Retorna uma lista de matérias ativas (com dados ou no cronograma).
+   * @returns {Array} Lista de objetos de matéria.
+   */
+  function getMateriasAtivas() {
+    return appData.materiasBase.filter(materia => {
+      const isInCronograma = Object.values(appData.cronogramaSemanal).some(slots =>
+        slots.some(slot => slot.materia === materia.nome)
+      );
+      return isInCronograma || materia.totalHoras > 0 || materia.acertos > 0 || materia.erros > 0;
+    });
+  }
+
+  /**
+   * Renderiza a tabela de total de horas por conteúdo (para desktop)
+   * e a lista de cartões de horas (para mobile).
+   */
+  function renderizarHorasTable() {
+    const materiasAtivas = getMateriasAtivas();
+    const tbody = document.querySelector('#horasTable tbody');
+    const horasCardList = document.getElementById('horasCardList');
+
+    tbody.innerHTML = '';
+    horasCardList.innerHTML = '';
+
+    if (materiasAtivas.length === 0) {
+      const noDataMessage = '<p class="no-slots-message">Nenhuma matéria com dados ou no cronograma.</p>';
+      const row = tbody.insertRow();
+      const cell = row.insertCell();
+      cell.colSpan = 4;
+      cell.innerHTML = noDataMessage;
+      horasCardList.innerHTML = noDataMessage;
+      return;
+    }
+
+    materiasAtivas.forEach((materia) => {
+      // Renderiza para a tabela (desktop)
+      const row = tbody.insertRow();
+      row.insertCell().textContent = materia.nome;
+      const horasCell = row.insertCell();
+      horasCell.textContent = `${materia.totalHoras} min`;
+
+      const cronometroCell = row.insertCell();
+      const cronometroDisplay = document.createElement('span');
+      cronometroDisplay.textContent = '00:00:00';
+      cronometroDisplay.id = `cronometro-${materia.nome.replace(/\s/g, '-')}`;
+      cronometroDisplay.className = 'cronometro-display';
+      cronometroCell.appendChild(cronometroDisplay);
+
+      const actionsCell = row.insertCell();
+      actionsCell.className = 'cronometro-actions';
+      actionsCell.id = `actions-table-${materia.nome.replace(/\s/g, '-')}`; // ID para a célula de ações da tabela
+
+      const startBtn = document.createElement('button');
+      startBtn.innerHTML = '<i class="fas fa-play"></i> Iniciar';
+      startBtn.className = 'start-btn';
+      startBtn.onclick = () => iniciarEstudo(materia.nome, cronometroDisplay);
+      actionsCell.appendChild(startBtn);
+
+      const pauseBtn = document.createElement('button');
+      pauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pausar';
+      pauseBtn.className = 'pause-btn';
+      pauseBtn.style.display = 'none';
+      pauseBtn.onclick = () => pausarEstudo(materia.nome);
+      actionsCell.appendChild(pauseBtn);
+
+      const resumeBtn = document.createElement('button');
+      resumeBtn.innerHTML = '<i class="fas fa-play"></i> Continuar';
+      resumeBtn.className = 'resume-btn';
+      resumeBtn.style.display = 'none';
+      resumeBtn.onclick = () => continuarEstudo(materia.nome);
+      actionsCell.appendChild(resumeBtn);
+
+      const finishBtn = document.createElement('button');
+      finishBtn.innerHTML = '<i class="fas fa-stop"></i> Concluir';
+      finishBtn.className = 'finish-btn';
+      finishBtn.style.display = 'none';
+      finishBtn.onclick = () => concluirEstudo(materia.nome);
+      actionsCell.appendChild(finishBtn);
+
+      const resetBtn = document.createElement('button'); // Novo botão Zerar
+      resetBtn.innerHTML = '<i class="fas fa-redo"></i> Zerar';
+      resetBtn.className = 'reset-btn';
+      resetBtn.onclick = () => resetarEstudo(materia.nome);
+      actionsCell.appendChild(resetBtn);
+
+      // Renderiza para o cartão (mobile)
+      const card = document.createElement('div');
+      card.className = 'materia-card';
+      card.innerHTML = `
+        <div class="card-header">${materia.nome}</div>
+        <div class="card-body">
+          <p>Total de Horas: <span id="card-horas-${materia.nome.replace(/\s/g, '-')}" class="total-horas">${materia.totalHoras} min</span></p>
+          <div class="cronometro-section">
+            <span id="card-cronometro-${materia.nome.replace(/\s/g, '-')}" class="cronometro-display">00:00:00</span>
+            <div class="cronometro-actions" id="actions-card-${materia.nome.replace(/\s/g, '-')}">
+              <button class="start-btn" onclick="iniciarEstudo('${materia.nome}', document.getElementById('card-cronometro-${materia.nome.replace(/\s/g, '-')}'))"><i class="fas fa-play"></i> Iniciar</button>
+              <button class="pause-btn" style="display:none;" onclick="pausarEstudo('${materia.nome}')"><i class="fas fa-pause"></i> Pausar</button>
+              <button class="resume-btn" style="display:none;" onclick="continuarEstudo('${materia.nome}')"><i class="fas fa-play"></i> Continuar</button>
+              <button class="finish-btn" style="display:none;" onclick="concluirEstudo('${materia.nome}')"><i class="fas fa-stop"></i> Concluir</button>
+              <button class="reset-btn" onclick="resetarEstudo('${materia.nome}')"><i class="fas fa-redo"></i> Zerar</button>
+            </div>
+          </div>
+        </div>
+      `;
+      horasCardList.appendChild(card);
+
+      // Atualiza o estado do cronômetro para ambos os displays
+      if (activeCronometer.materiaNome === materia.nome) {
+          const currentElapsedTime = activeCronometer.pausedTime + (Date.now() - activeCronometer.startTime);
+          const formattedTime = formatTime(currentElapsedTime);
+
+          // Para a tabela
+          cronometroDisplay.textContent = formattedTime;
+          cronometroDisplay.classList.add(activeCronometer.isPaused ? 'paused' : 'active');
+          actionsCell.querySelector('.start-btn').style.display = 'none';
+          if (activeCronometer.isPaused) {
+              actionsCell.querySelector('.pause-btn').style.display = 'none';
+              actionsCell.querySelector('.resume-btn').style.display = 'inline-block';
+          } else {
+              actionsCell.querySelector('.pause-btn').style.display = 'inline-block';
+              actionsCell.querySelector('.resume-btn').style.display = 'none';
+          }
+          actionsCell.querySelector('.finish-btn').style.display = 'inline-block';
+
+          // Para o cartão
+          const cardCronometroDisplay = document.getElementById(`card-cronometro-${materia.nome.replace(/\s/g, '-')}`);
+          const cardActionsContainer = document.getElementById(`actions-card-${materia.nome.replace(/\s/g, '-')}`);
+          cardCronometroDisplay.textContent = formattedTime;
+          cardCronometroDisplay.classList.add(activeCronometer.isPaused ? 'paused' : 'active');
+          cardActionsContainer.querySelector('.start-btn').style.display = 'none';
+          if (activeCronometer.isPaused) {
+              cardActionsContainer.querySelector('.pause-btn').style.display = 'none';
+              cardActionsContainer.querySelector('.resume-btn').style.display = 'inline-block';
+          } else {
+              cardActionsContainer.querySelector('.pause-btn').style.display = 'inline-block';
+              cardActionsContainer.querySelector('.resume-btn').style.display = 'none';
+          }
+          cardActionsContainer.querySelector('.finish-btn').style.display = 'inline-block';
+      } else {
+          // Para a tabela
+          cronometroDisplay.classList.remove('active', 'paused');
+          actionsCell.querySelector('.start-btn').style.display = 'inline-block';
+          actionsCell.querySelector('.pause-btn').style.display = 'none';
+          actionsCell.querySelector('.resume-btn').style.display = 'none';
+          actionsCell.querySelector('.finish-btn').style.display = 'none';
+
+          // Para o cartão
+          const cardCronometroDisplay = document.getElementById(`card-cronometro-${materia.nome.replace(/\s/g, '-')}`);
+          const cardActionsContainer = document.getElementById(`actions-card-${materia.nome.replace(/\s/g, '-')}`);
+          cardCronometroDisplay.classList.remove('active', 'paused');
+          cardActionsContainer.querySelector('.start-btn').style.display = 'inline-block';
+          cardActionsContainer.querySelector('.pause-btn').style.display = 'none';
+          cardActionsContainer.querySelector('.resume-btn').style.display = 'none';
+          cardActionsContainer.querySelector('.finish-btn').style.display = 'none';
+      }
+    });
+  }
+
+  /**
+   * Formata o tempo em milissegundos para HH:MM:SS.
+   * @param {number} ms - Tempo em milissegundos.
+   * @returns {string} Tempo formatado.
+   */
+  function formatTime(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  }
+
+  /**
+   * Inicia o cronômetro para uma matéria.
+   * @param {string} materiaNome - O nome da matéria.
+   * @param {HTMLElement} displayElement - O elemento onde o tempo será exibido.
+   */
+  function iniciarEstudo(materiaNome, displayElement) {
+    // Se já houver um cronômetro ativo para outra matéria, impede o início
+    if (activeCronometer.interval && activeCronometer.materiaNome !== materiaNome) {
+        showFeedback(`O estudo de "${activeCronometer.materiaNome}" está ativo. Por favor, pause ou conclua-o antes de iniciar outro.`, 'error', 'materiaFeedback');
+        return;
+    }
+    // Se o cronômetro já estiver ativo e não pausado para a mesma matéria, não faz nada
+    if (activeCronometer.interval && activeCronometer.materiaNome === materiaNome && !activeCronometer.isPaused) {
+        return;
+    }
+
+    clearInterval(activeCronometer.interval);
+
+    // Se for uma nova matéria ou um novo início (não continuação de pausa)
+    if (activeCronometer.materiaNome !== materiaNome || activeCronometer.pausedTime === 0) {
+        activeCronometer.pausedTime = 0;
+    }
+
+    activeCronometer.materiaNome = materiaNome;
+    activeCronometer.displayElement = displayElement; // Define o elemento de display correto (tabela ou cartão)
+    activeCronometer.startTime = Date.now();
+    activeCronometer.isPaused = false;
+
+    // Função auxiliar para atualizar botões e classes
+    const updateUIForCronometer = (materiaName, isActive, isPaused) => {
+        const tableDisplay = document.getElementById(`cronometro-${materiaName.replace(/\s/g, '-')}`);
+        const cardDisplay = document.getElementById(`card-cronometro-${materiaName.replace(/\s/g, '-')}`);
+
+        const tableActions = document.getElementById(`actions-table-${materiaName.replace(/\s/g, '-')}`);
+        const cardActions = document.getElementById(`actions-card-${materiaName.replace(/\s/g, '-')}`);
+
+        [tableDisplay, cardDisplay].forEach(displayElem => {
+            if (displayElem) {
+                displayElem.classList.remove('active', 'paused');
+                if (isActive) {
+                    displayElem.classList.add(isPaused ? 'paused' : 'active');
+                }
+            }
+        });
+
+        [tableActions, cardActions].forEach(actionsContainer => {
+            if (actionsContainer) {
+                actionsContainer.querySelector('.start-btn').style.display = isActive ? 'none' : 'inline-block';
+                actionsContainer.querySelector('.pause-btn').style.display = (isActive && !isPaused) ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.resume-btn').style.display = (isActive && isPaused) ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.finish-btn').style.display = isActive ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.reset-btn').style.display = 'inline-block'; // Zerar sempre visível quando cronômetro ativo
+            }
+        });
+    };
+
+    // Primeiro, reseta o estado de todos os cronômetros para garantir que apenas um esteja ativo
+    appData.materiasBase.forEach(materia => {
+        if (materia.nome !== materiaNome) {
+            updateUIForCronometer(materia.nome, false, false);
+        }
+    });
+
+    // Agora, ativa o cronômetro para a matéria selecionada
+    updateUIForCronometer(materiaNome, true, false);
+
+
+    activeCronometer.interval = setInterval(() => {
+      const elapsedTime = Date.now() - activeCronometer.startTime + activeCronometer.pausedTime;
+      const formattedTime = formatTime(elapsedTime);
+
+      // Atualiza o display do elemento ativo
+      if (activeCronometer.displayElement) {
+          activeCronometer.displayElement.textContent = formattedTime;
+      }
+
+      // Atualiza o display do outro elemento (se existir)
+      const otherDisplayElementId = activeCronometer.displayElement.id.startsWith('card-')
+        ? activeCronometer.displayElement.id.replace('card-cronometro-', 'cronometro-')
+        : activeCronometer.displayElement.id.replace('cronometro-', 'card-cronometro-');
+      const otherDisplayElement = document.getElementById(otherDisplayElementId);
+      if (otherDisplayElement && otherDisplayElement !== activeCronometer.displayElement) {
+          otherDisplayElement.textContent = formattedTime;
+      }
+
+    }, 1000);
+  }
+
+  /**
+   * Pausa o cronômetro para a matéria ativa.
+   * @param {string} materiaNome - O nome da matéria.
+   */
+  function pausarEstudo(materiaNome) {
+    if (activeCronometer.materiaNome !== materiaNome || activeCronometer.isPaused) {
+        return;
+    }
+
+    clearInterval(activeCronometer.interval);
+    activeCronometer.interval = null;
+    activeCronometer.pausedTime += (Date.now() - activeCronometer.startTime);
+    activeCronometer.isPaused = true;
+
+    // Função auxiliar para atualizar botões e classes
+    const updateUIForCronometer = (materiaName, isActive, isPaused) => {
+        const tableDisplay = document.getElementById(`cronometro-${materiaName.replace(/\s/g, '-')}`);
+        const cardDisplay = document.getElementById(`card-cronometro-${materiaName.replace(/\s/g, '-')}`);
+
+        const tableActions = document.getElementById(`actions-table-${materiaName.replace(/\s/g, '-')}`);
+        const cardActions = document.getElementById(`actions-card-${materiaName.replace(/\s/g, '-')}`);
+
+        [tableDisplay, cardDisplay].forEach(displayElem => {
+            if (displayElem) {
+                displayElem.classList.remove('active', 'paused');
+                if (isActive) {
+                    displayElem.classList.add(isPaused ? 'paused' : 'active');
+                }
+            }
+        });
+
+        [tableActions, cardActions].forEach(actionsContainer => {
+            if (actionsContainer) {
+                actionsContainer.querySelector('.start-btn').style.display = isActive ? 'none' : 'inline-block';
+                actionsContainer.querySelector('.pause-btn').style.display = (isActive && !isPaused) ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.resume-btn').style.display = (isActive && isPaused) ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.finish-btn').style.display = isActive ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.reset-btn').style.display = 'inline-block';
+            }
+        });
+    };
+
+    updateUIForCronometer(materiaNome, true, true); // Pausa a matéria ativa
+  }
+
+  /**
+   * Continua o cronômetro para a matéria ativa.
+   * @param {string} materiaNome - O nome da matéria.
+   */
+  function continuarEstudo(materiaNome) {
+    if (activeCronometer.materiaNome !== materiaNome || !activeCronometer.isPaused) {
+        return;
+    }
+
+    activeCronometer.startTime = Date.now();
+    activeCronometer.isPaused = false;
+
+    // Função auxiliar para atualizar botões e classes
+    const updateUIForCronometer = (materiaName, isActive, isPaused) => {
+        const tableDisplay = document.getElementById(`cronometro-${materiaName.replace(/\s/g, '-')}`);
+        const cardDisplay = document.getElementById(`card-cronometro-${materiaName.replace(/\s/g, '-')}`);
+
+        const tableActions = document.getElementById(`actions-table-${materiaName.replace(/\s/g, '-')}`);
+        const cardActions = document.getElementById(`actions-card-${materiaName.replace(/\s/g, '-')}`);
+
+        [tableDisplay, cardDisplay].forEach(displayElem => {
+            if (displayElem) {
+                displayElem.classList.remove('active', 'paused');
+                if (isActive) {
+                    displayElem.classList.add(isPaused ? 'paused' : 'active');
+                }
+            }
+        });
+
+        [tableActions, cardActions].forEach(actionsContainer => {
+            if (actionsContainer) {
+                actionsContainer.querySelector('.start-btn').style.display = isActive ? 'none' : 'inline-block';
+                actionsContainer.querySelector('.pause-btn').style.display = (isActive && !isPaused) ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.resume-btn').style.display = (isActive && isPaused) ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.finish-btn').style.display = isActive ? 'inline-block' : 'none';
+                actionsContainer.querySelector('.reset-btn').style.display = 'inline-block';
+            }
+        });
+    };
+
+    updateUIForCronometer(materiaNome, true, false); // Continua a matéria ativa
+
+    activeCronometer.interval = setInterval(() => {
+      const elapsedTime = Date.now() - activeCronometer.startTime + activeCronometer.pausedTime;
+      const formattedTime = formatTime(elapsedTime);
+
+      // Atualiza o display do elemento ativo
+      if (activeCronometer.displayElement) {
+          activeCronometer.displayElement.textContent = formattedTime;
+      }
+
+      // Atualiza o display do outro elemento (se existir)
+      const otherDisplayElementId = activeCronometer.displayElement.id.startsWith('card-')
+        ? activeCronometer.displayElement.id.replace('card-cronometro-', 'cronometro-')
+        : activeCronometer.displayElement.id.replace('cronometro-', 'card-cronometro-');
+      const otherDisplayElement = document.getElementById(otherDisplayElementId);
+      if (otherDisplayElement && otherDisplayElement !== activeCronometer.displayElement) {
+          otherDisplayElement.textContent = formattedTime;
+      }
+    }, 1000);
+  }
+
+  /**
+   * Conclui o estudo para a matéria ativa, salva o tempo e reseta o cronômetro.
+   * @param {string} materiaNome - O nome da matéria.
+   */
+  function concluirEstudo(materiaNome) {
+    if (activeCronometer.materiaNome !== materiaNome) {
+        return;
+    }
+
+    clearInterval(activeCronometer.interval);
+    activeCronometer.interval = null;
+
+    const totalElapsedTimeMs = activeCronometer.pausedTime + (Date.now() - activeCronometer.startTime);
+    const elapsedTimeMinutes = Math.round(totalElapsedTimeMs / (1000 * 60));
+
+    const materia = appData.materiasBase.find(m => m.nome === materiaNome);
+    if (materia) {
+      materia.totalHoras += elapsedTimeMinutes;
+      salvarDados();
+      showFeedback(`Estudo de "${materiaNome}" concluído! ${elapsedTimeMinutes} min adicionados.`, 'success', 'materiaFeedback');
+    }
+
+    // Resetar o estado do cronômetro ativo
+    activeCronometer.materiaNome = null;
+    activeCronometer.displayElement = null;
+    activeCronometer.startTime = 0;
+    activeCronometer.pausedTime = 0;
+    activeCronometer.isPaused = false;
+
+    renderizarHorasTable(); // Re-renderiza para resetar os cronômetros e atualizar os totais
+    atualizarGraficos();
+  }
+
+  /**
+   * Zera o tempo de estudo de uma matéria específica.
+   * @param {string} materiaNome - O nome da matéria a ser zerada.
+   */
+  function resetarEstudo(materiaNome) {
+    if (confirm(`Tem certeza que deseja zerar o tempo de estudo de "${materiaNome}"?`)) {
+      const materia = appData.materiasBase.find(m => m.nome === materiaNome);
+      if (materia) {
+        // Se o cronômetro estiver ativo para esta matéria, conclui/reseta-o
+        if (activeCronometer.materiaNome === materiaNome) {
+          clearInterval(activeCronometer.interval);
+          activeCronometer.interval = null;
+          activeCronometer.materiaNome = null;
+          activeCronometer.displayElement = null;
+          activeCronometer.startTime = 0;
+          activeCronometer.pausedTime = 0;
+          activeCronometer.isPaused = false;
+        }
+
+        materia.totalHoras = 0; // Zera o total de horas
+        salvarDados();
+        showFeedback(`Tempo de estudo de "${materiaNome}" zerado com sucesso!`, 'success', 'materiaFeedback');
+        renderizarHorasTable(); // Re-renderiza para atualizar o display
+        atualizarGraficos();
+      }
+    }
+  }
+
+  /**
+   * Renderiza a tabela de acertos e erros (para desktop)
+   * e a lista de cartões de questões (para mobile).
+   */
+  function renderizarQuestoesTable() {
+    const materiasAtivas = getMateriasAtivas();
+    const tbody = document.querySelector('#questoesTable tbody');
+    const questoesCardList = document.getElementById('questoesCardList');
+
+    tbody.innerHTML = '';
+    questoesCardList.innerHTML = '';
+
+    if (materiasAtivas.length === 0) {
+      const noDataMessage = '<p class="no-slots-message">Nenhuma matéria com dados ou no cronograma.</p>';
+      const row = tbody.insertRow();
+      const cell = row.insertCell();
+      cell.colSpan = 4;
+      cell.innerHTML = noDataMessage;
+      questoesCardList.innerHTML = noDataMessage;
+      return;
+    }
+
+    materiasAtivas.forEach((materia) => {
+      const totalQuestoes = materia.acertos + materia.erros;
+      const percentual = totalQuestoes > 0 ? ((materia.acertos / totalQuestoes) * 100).toFixed(2) : '0.00';
+      let percentualClass = '';
+      if (percentual >= 80) {
+          percentualClass = 'high';
+      } else if (percentual >= 50) {
+          percentualClass = 'medium';
+      } else {
+          percentualClass = 'low';
+      }
+
+      // Renderiza para a tabela (desktop)
+      const row = tbody.insertRow();
+      row.insertCell().textContent = materia.nome;
+
+      const acertosCell = row.insertCell();
+      const acertosContainer = document.createElement('div');
+      acertosContainer.className = 'input-with-buttons';
+      const acertosInput = document.createElement('input');
+      acertosInput.type = 'number';
+      acertosInput.min = '0';
+      acertosInput.value = materia.acertos;
+      acertosInput.addEventListener('change', (e) => {
+        materia.acertos = Number(e.target.value);
+        salvarDados();
+        renderizarQuestoesTable();
+        atualizarGraficos();
+      });
+      const acertosBtnMinus = document.createElement('button');
+      acertosBtnMinus.textContent = '-';
+      acertosBtnMinus.onclick = () => { acertosInput.value = Math.max(0, Number(acertosInput.value) - 1); acertosInput.dispatchEvent(new Event('change')); };
+      const acertosBtnPlus = document.createElement('button');
+      acertosBtnPlus.textContent = '+';
+      acertosBtnPlus.onclick = () => { acertosInput.value = Number(acertosInput.value) + 1; acertosInput.dispatchEvent(new Event('change')); };
+      acertosContainer.appendChild(acertosBtnMinus);
+      acertosContainer.appendChild(acertosInput);
+      acertosContainer.appendChild(acertosBtnPlus);
+      acertosCell.appendChild(acertosContainer);
+
+      const errosCell = row.insertCell();
+      const errosContainer = document.createElement('div');
+      errosContainer.className = 'input-with-buttons';
+      const errosInput = document.createElement('input');
+      errosInput.type = 'number';
+      errosInput.min = '0';
+      errosInput.value = materia.erros;
+      errosInput.addEventListener('change', (e) => {
+        materia.erros = Number(e.target.value);
+        salvarDados();
+        renderizarQuestoesTable();
+        atualizarGraficos();
+      });
+      const errosBtnMinus = document.createElement('button');
+      errosBtnMinus.textContent = '-';
+      errosBtnMinus.onclick = () => { errosInput.value = Math.max(0, Number(errosInput.value) - 1); errosInput.dispatchEvent(new Event('change')); };
+      const errosBtnPlus = document.createElement('button');
+      errosBtnPlus.textContent = '+';
+      errosBtnPlus.onclick = () => { errosInput.value = Number(errosInput.value) + 1; errosInput.dispatchEvent(new Event('change')); };
+      errosContainer.appendChild(errosBtnMinus);
+      errosContainer.appendChild(errosInput);
+      errosContainer.appendChild(errosBtnPlus);
+      errosCell.appendChild(errosContainer);
+
+      const percentualCell = row.insertCell();
+      percentualCell.textContent = `${percentual}%`;
+      percentualCell.classList.add('percentual-acertos', percentualClass);
+
+      // Renderiza para o cartão (mobile)
+      const card = document.createElement('div');
+      card.className = 'materia-card';
+      card.innerHTML = `
+        <div class="card-header">${materia.nome}</div>
+        <div class="card-body">
+          <div class="stats-row">
+            <span>Acertos:</span>
+            <div class="input-with-buttons">
+              <button onclick="updateAcertos('${materia.nome}', -1)">-</button>
+              <input type="number" min="0" value="${materia.acertos}" onchange="updateAcertos('${materia.nome}', 0, this.value)">
+              <button onclick="updateAcertos('${materia.nome}', 1)">+</button>
+            </div>
+          </div>
+          <div class="stats-row">
+            <span>Erros:</span>
+            <div class="input-with-buttons">
+              <button onclick="updateErros('${materia.nome}', -1)">-</button>
+              <input type="number" min="0" value="${materia.erros}" onchange="updateErros('${materia.nome}', 0, this.value)">
+              <button onclick="updateErros('${materia.nome}', 1)">+</button>
+            </div>
+          </div>
+          <p>Percentual: <span class="percentual-acertos ${percentualClass}">${percentual}%</span></p>
+        </div>
+      `;
+      questoesCardList.appendChild(card);
+    });
+  }
+
+  /**
+   * Atualiza o número de acertos de uma matéria.
+   * @param {string} materiaNome - O nome da matéria.
+   * @param {number} delta - O valor a ser adicionado/subtraído (1, -1) ou 0 se for uma mudança direta do input.
+   * @param {string} [newValue] - O novo valor do input, se a mudança for direta.
+   */
+  function updateAcertos(materiaNome, delta, newValue = null) {
+    const materia = appData.materiasBase.find(m => m.nome === materiaNome);
+    if (materia) {
+      if (newValue !== null) {
+        materia.acertos = Math.max(0, Number(newValue));
+      } else {
+        materia.acertos = Math.max(0, materia.acertos + delta);
+      }
+      salvarDados();
+      renderizarQuestoesTable();
+      atualizarGraficos();
+    }
+  }
+
+  /**
+   * Atualiza o número de erros de uma matéria.
+   * @param {string} materiaNome - O nome da matéria.
+   * @param {number} delta - O valor a ser adicionado/subtraído (1, -1) ou 0 se for uma mudança direta do input.
+   * @param {string} [newValue] - O novo valor do input, se a mudança for direta.
+   */
+  function updateErros(materiaNome, delta, newValue = null) {
+    const materia = appData.materiasBase.find(m => m.nome === materiaNome);
+    if (materia) {
+      if (newValue !== null) {
+        materia.erros = Math.max(0, Number(newValue));
+      } else {
+        materia.erros = Math.max(0, materia.erros + delta);
+      }
+      salvarDados();
+      renderizarQuestoesTable();
+      atualizarGraficos();
+    }
+  }
+
+  /**
+   * Adiciona uma nova matéria à lista de matérias base.
+   */
+  function adicionarMateriaBase() {
+    const novaMateriaNomeInput = document.getElementById('novaMateriaNome');
+    const nome = novaMateriaNomeInput.value.trim();
+
+    if (nome) {
+      if (!appData.materiasBase.some(m => m.nome.toLowerCase() === nome.toLowerCase())) {
+        appData.materiasBase.push({
+          nome: nome,
+          totalHoras: 0,
+          acertos: 0,
+          erros: 0
+        });
+        novaMateriaNomeInput.value = '';
+        salvarDados();
+        renderizarTabelas();
+        renderizarMateriasModalList(); // Atualiza a lista no modal de configurações
+        atualizarGraficos();
+        showFeedback(`Matéria "${nome}" adicionada com sucesso!`, 'success', 'materiaFeedback');
+      } else {
+        showFeedback('Matéria já existe!', 'error', 'materiaFeedback');
+      }
+    } else {
+      showFeedback('Por favor, digite o nome da matéria.', 'error', 'materiaFeedback');
+    }
+  }
+
+  /**
+   * Remove uma matéria da lista de matérias base e de todos os cronogramas.
+   * @param {string} materiaNome - O nome da matéria a ser removida.
+   */
+  function removerMateriaBase(materiaNome) {
+    if (confirm(`Tem certeza que deseja remover a matéria "${materiaNome}"? Isso removerá todos os dados associados.`)) {
+      if (activeCronometer.materiaNome === materiaNome) {
+          concluirEstudo(materiaNome); // Conclui o estudo se a matéria estiver ativa no cronômetro
+      }
+
+      appData.materiasBase = appData.materiasBase.filter(m => m.nome !== materiaNome);
+
+      Object.keys(appData.cronogramaSemanal).forEach(dia => {
+        appData.cronogramaSemanal[dia] = appData.cronogramaSemanal[dia].filter(slot => slot.materia !== materiaNome);
+      });
+
+      salvarDados();
+      renderizarTabelas();
+      renderizarMateriasModalList(); // Atualiza a lista no modal de configurações
+      atualizarGraficos();
+      showFeedback(`Matéria "${materiaNome}" removida com sucesso!`, 'success', 'materiaFeedback');
+    }
+  }
+
+  /**
+   * Adiciona um novo dia ao cronograma.
+   */
+  function adicionarDiaCronograma() {
+    const novoDiaNomeInput = document.getElementById('novoDiaNome');
+    const nomeDia = novoDiaNomeInput.value.trim();
+
+    if (nomeDia) {
+      // Capitaliza a primeira letra de cada palavra para padronização
+      const formattedNomeDia = nomeDia.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+
+      if (!appData.diasCadastrados.some(d => d.toLowerCase() === formattedNomeDia.toLowerCase())) {
+        appData.diasCadastrados.push(formattedNomeDia);
+        appData.cronogramaSemanal[formattedNomeDia] = []; // Inicializa o array de slots para o novo dia
+        novoDiaNomeInput.value = '';
+        salvarDados();
+        renderizarCronogramaDayList();
+        renderizarCronograma(); // Atualiza a tabela do cronograma
+        showFeedback(`Dia "${formattedNomeDia}" adicionado com sucesso!`, 'success', 'cronogramaDayFeedback');
+      } else {
+        showFeedback('Dia já existe!', 'error', 'cronogramaDayFeedback');
+      }
+    } else {
+      showFeedback('Por favor, digite o nome do dia.', 'error', 'cronogramaDayFeedback');
+    }
+  }
+
+  /**
+   * Remove um dia do cronograma.
+   * @param {string} diaNome - O nome do dia a ser removido.
+   */
+  function removerDiaCronograma(diaNome) {
+    if (confirm(`Tem certeza que deseja remover o dia "${diaNome}"? Isso removerá todos os slots de estudo associados a este dia.`)) {
+      appData.diasCadastrados = appData.diasCadastrados.filter(d => d !== diaNome);
+      delete appData.cronogramaSemanal[diaNome]; // Remove os slots associados a este dia
+
+      salvarDados();
+      renderizarCronogramaDayList();
+      renderizarCronograma(); // Atualiza a tabela do cronograma
+      renderizarHorasTable(); // Atualiza para remover matérias que só estavam nesse dia
+      renderizarQuestoesTable(); // Atualiza para remover matérias que só estavam nesse dia
+      atualizarGraficos(); // Atualiza gráficos
+      showFeedback(`Dia "${diaNome}" removido com sucesso!`, 'success', 'cronogramaDayFeedback');
+    }
+  }
+
+  /**
+   * Renderiza a lista de dias cadastrados no modal de configurações.
+   */
+  function renderizarCronogramaDayList() {
+    const cronogramaDayListDiv = document.getElementById('cronogramaDayList');
+    cronogramaDayListDiv.innerHTML = '';
+
+    if (appData.diasCadastrados.length === 0) {
+      cronogramaDayListDiv.innerHTML = '<p class="no-slots-message">Nenhum dia cadastrado.</p>';
+      return;
+    }
+
+    appData.diasCadastrados.forEach(dia => {
+      const dayItem = document.createElement('div');
+      dayItem.className = 'cronograma-day-item';
+      dayItem.innerHTML = `
+        <span>${dia}</span>
+        <button class="remove-btn" onclick="removerDiaCronograma('${dia}')">Remover</button>
+      `;
+      cronogramaDayListDiv.appendChild(dayItem);
+    });
+  }
+
+  /**
+   * Renderiza todas as tabelas e cartões.
+   */
+  function renderizarTabelas() {
+    renderizarCronograma();
+    renderizarHorasTable();
+    renderizarQuestoesTable();
+  }
+
+  /**
+   * Atualiza os gráficos com os dados atuais.
+   */
+  function atualizarGraficos() {
+    const materiasAtivas = getMateriasAtivas();
+
+    const materiasLabels = materiasAtivas.map(m => m.nome);
+    const horasData = materiasAtivas.map(m => m.totalHoras);
+    const acertosData = materiasAtivas.map(m => m.acertos);
+    const errosData = materiasAtivas.map(m => m.erros);
+
+    const textColor = appData.theme === 'light' ? '#333' : '#e0e0e0';
+    const gridColor = appData.theme === 'light' ? '#e0e0e0' : '#2e2e4a';
+
+    if (chartHoras) chartHoras.destroy();
+    chartHoras = new Chart(document.getElementById('chartHoras'), {
+      type: 'bar',
+      data: {
+        labels: materiasLabels,
+        datasets: [{
+          label: 'Total de Horas (minutos)',
+          data: horasData,
+          backgroundColor: '#e94560',
+          borderColor: '#c23a50',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false, /* Permite que o gráfico se ajuste melhor ao container */
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: textColor },
+            grid: { color: gridColor }
+          },
+          x: {
+            ticks: { color: textColor },
+            grid: { color: gridColor }
+          }
+        },
+        plugins: {
+          legend: { labels: { color: textColor } },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
+                }
+                if (context.parsed.y !== null) {
+                  label += context.parsed.y + ' min';
+                }
+                return label;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    if (chartQuestoes) chartQuestoes.destroy();
+    chartQuestoes = new Chart(document.getElementById('chartQuestoes'), {
+      type: 'bar',
+      data: {
+        labels: materiasLabels,
+        datasets: [
+          { label: 'Acertos', data: acertosData, backgroundColor: '#66bb6a', borderColor: '#4caf50', borderWidth: 1 },
+          { label: 'Erros', data: errosData, backgroundColor: '#ef5350', borderColor: '#f44336', borderWidth: 1 }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false, /* Permite que o gráfico se ajuste melhor ao container */
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: textColor },
+            grid: { color: gridColor }
+          },
+          x: {
+            ticks: { color: textColor },
+            grid: { color: gridColor }
+          }
+        },
+        plugins: {
+          legend: { labels: { color: textColor } },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
+                }
+                if (context.parsed.y !== null) {
+                  label += context.parsed.y + ' questões';
+                }
+                return label;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  /**
+   * Salva o progresso atual em um arquivo JSON e o baixa.
+   */
+  function salvarProgressoJSON() {
+    const dataToSave = JSON.stringify(appData, null, 2);
+    const blob = new Blob([dataToSave], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'plano_estudo_progresso.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showFeedback('Progresso salvo com sucesso!', 'success', 'dataFeedback');
+  }
+
+  /**
+   * Carrega o progresso de um arquivo JSON selecionado pelo usuário.
+   * @param {Event} event - O evento de mudança do input de arquivo.
+   */
+  function carregarProgressoJSON(event) {
+    const file = event.target.files[0];
+    if (!file) {
+      showFeedback('Nenhum arquivo selecionado.', 'error', 'dataFeedback');
+      return;
+    }
+
+    if (file.type !== 'application/json') {
+      showFeedback('Por favor, selecione um arquivo JSON válido.', 'error', 'dataFeedback');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const loadedData = JSON.parse(e.target.result);
+
+        // Validação básica da estrutura do JSON
+        if (loadedData.materiasBase && Array.isArray(loadedData.materiasBase) &&
+            loadedData.cronogramaSemanal && typeof loadedData.cronogramaSemanal === 'object' &&
+            loadedData.diasCadastrados && Array.isArray(loadedData.diasCadastrados)) {
+
+          if (!confirm('Tem certeza que deseja carregar este progresso? O progresso atual será substituído.')) {
+            showFeedback('Carregamento cancelado.', 'error', 'dataFeedback');
+            return;
+          }
+
+          appData = loadedData;
+          // Aplica o tema carregado
+          applyTheme(appData.theme);
+          salvarDados(); // Salva os dados carregados no localStorage
+          renderizarTabelas();
+          atualizarGraficos();
+          showFeedback('Progresso carregado com sucesso!', 'success', 'dataFeedback');
+        } else {
+          showFeedback('Estrutura do arquivo JSON inválida. Certifique-se de que é um arquivo de progresso válido.', 'error', 'dataFeedback');
+        }
+      } catch (error) {
+        console.error('Erro ao parsear JSON:', error);
+        showFeedback('Erro ao carregar o arquivo JSON. Verifique o formato.', 'error', 'dataFeedback');
+      } finally {
+        event.target.value = ''; // Limpa o input de arquivo
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  /**
+   * Alterna entre o tema claro e escuro.
+   */
+  function toggleTheme() {
+    appData.theme = appData.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(appData.theme);
+    salvarDados(); // Salva a preferência de tema
+    atualizarGraficos(); // Atualiza gráficos para refletir as novas cores
+  }
+
+  /**
+   * Aplica o tema especificado ao body.
+   * @param {string} themeName - 'dark' ou 'light'.
+   */
+  function applyTheme(themeName) {
+    document.body.classList.remove('dark-theme', 'light-theme'); // Remove ambos para evitar conflitos
+    document.body.classList.add(`${themeName}-theme`);
+  }
+
+  // Função para controle das abas
+  function showTab(tabId, clickedButton) {
+    // Esconder todos os conteúdos das abas
+    document.querySelectorAll('.tab-content').forEach(tab => {
+      tab.classList.remove('active');
+      tab.style.display = 'none'; // Esconde explicitamente
+    });
+
+    // Remover a classe 'active' de todos os botões de navegação (mobile e desktop)
+    document.querySelectorAll('.tab-navigation button').forEach(button => {
+      button.classList.remove('active');
+    });
+    document.querySelectorAll('.desktop-nav .nav-btn').forEach(button => {
+      button.classList.remove('active');
+    });
+
+    // Mostrar o conteúdo da aba clicada
+    const activeTabContent = document.getElementById(tabId);
+    activeTabContent.classList.add('active');
+    activeTabContent.style.display = 'block'; // Mostra explicitamente
+
+    // Adicionar a classe 'active' ao botão clicado
+    if (clickedButton) {
+      clickedButton.classList.add('active');
+    }
+
+    // Se a aba de gráficos for ativada, garantir que os gráficos sejam atualizados/renderizados
+    if (tabId === 'graficosTab') {
+      atualizarGraficos();
+    }
+
+    // Garante que as tabelas/cartões corretos sejam exibidos/escondidos
+    // Esta função já contém a lógica de media query para display: table/none e display: flex/none
+    renderizarTabelas();
+  }
+
+  // Inicialização: Carrega dados, renderiza tabelas e gráficos ao carregar a página
+  document.addEventListener('DOMContentLoaded', () => {
+    carregarDados();
+    applyTheme(appData.theme); // Aplica o tema carregado
+    renderizarTabelas(); // Renderiza todas as tabelas e cartões inicialmente
+    atualizarGraficos();
+
+    // Ajusta o padding superior do body para o header fixo em desktop
+    const headerHeight = document.querySelector('.main-header').offsetHeight;
+    if (window.matchMedia("(min-width: 769px)").matches) {
+        document.body.style.paddingTop = `${headerHeight + 20}px`; // Altura do header + 20px de margem
+    } else {
+        document.body.style.paddingTop = `20px`; // Padding padrão para mobile
+    }
+
+
+    // Lógica para ativar a primeira aba e seu botão correspondente
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      // Mobile: Ativa a aba de cronograma na barra inferior
+      const tabBtnCronograma = document.getElementById('tabBtnCronograma');
+      if (tabBtnCronograma) {
+        showTab('cronogramaTab', tabBtnCronograma);
+      }
+    } else {
+      // Desktop: Ativa a aba de cronograma na barra superior
+      const desktopTabBtnCronograma = document.getElementById('desktopTabBtnCronograma');
+      if (desktopTabBtnCronograma) {
+        showTab('cronogramaTab', desktopTabBtnCronograma);
+      }
+    }
+  });
+</script>
+</body>
+</html>
